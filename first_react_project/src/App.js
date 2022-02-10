@@ -5,11 +5,11 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
-      <Tweet/>
-      <Tweet/>
-      <Tweet/>
-      <Tweet/>
-      <Tweet/>
+      <Tweet name="Mariem"/>
+      <Tweet name="Ali"/>
+      <Tweet name="Mohssen"/>
+      <Tweet name="Michael"/>
+      <Tweet name="Oussema"/>
     </div>
   );
 }
