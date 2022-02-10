@@ -1,10 +1,12 @@
 import React from "react";
-import Hello from "./sayHello";
+import Tweet from "./Tweet";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Hello />
+    <div className="app">
+      <h1>Hello, hello!</h1>
+      <Tweet/>
     </div>
   );
 }
