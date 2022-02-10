@@ -5,7 +5,10 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
-      <h1>Hello, hello!</h1>
+      <Tweet/>
+      <Tweet/>
+      <Tweet/>
+      <Tweet/>
       <Tweet/>
     </div>
   );

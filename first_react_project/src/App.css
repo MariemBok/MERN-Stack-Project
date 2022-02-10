@@ -1,6 +1,10 @@
 .app{
- background: lightskyblue;
-  height: 100vh;
+  background: lightskyblue;
+  min-height: 100vh;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .tweet{
@@ -8,6 +12,7 @@
   height: 300px;
   width: 300px;
   border-radius: 10px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,3 +21,4 @@
   padding: 10px;
   margin: 20px;
 }
+
