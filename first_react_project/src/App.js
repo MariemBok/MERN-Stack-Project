@@ -12,6 +12,7 @@ function App() {
 `;
   const Mariem = styled.p`
   color: violet;  
+  margin: 20px;
   `;
   return (
     <div className="app">
