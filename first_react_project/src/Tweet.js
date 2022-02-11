@@ -3,9 +3,15 @@ import React, {useState} from "react";
 function Tweet({name}){
     const [isRed, redSet] = useState(false);
     const [count, countSet]= useState(0);
+
     const Increment = () =>{
         countSet(count + 1);
-        redSet(!isRed);
+        redSet(true);
+    }
+
+    const Init = () =>{
+        countSet(0);
+        redSet(false);
     }
 
     return(
@@ -13,6 +19,7 @@ function Tweet({name}){
             <h2>{name}</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis alias provident dolores?</p>
             <h3 className={isRed ? "red" : "blue"}>well, well, well.</h3>
+            <button onClick={Init}>Initialize</button>
             <button onClick={Increment}>Increment</button>
             <h3>{count}</h3>
         </div>
