@@ -1,11 +1,11 @@
-import React from "react";
-import Tweet from "./Tweet";
-import Clock from "./Clock";
+import React, {useState} from "react";
 import styled from "styled-components";
+import Product from "./Components/Product";
+import Products from "./products.json";
 import "./App.css";
 
 function App() {
-  const Title = styled.h3`
+  /*const Title = styled.h3`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
@@ -13,17 +13,20 @@ function App() {
   const Mariem = styled.p`
   color: violet;  
   margin: 20px;
-  `;
+  `;*/
+
+
+  
+  const AppFrame = styled.div`
+  text-align: center;
+  display: flex;
+`;
   return (
-    <div className="app">
-      <Title>This is the title</Title>
-      <Mariem>Mariem, eh?</Mariem>
-      <Tweet name="Mariem"/>
-      <Tweet name="Ali"/>
-      <Tweet name="Mohssen"/>
-      <Tweet name="Michael"/>
-      <Tweet name="Oussema"/>
-    </div>
+    <AppFrame className="app">   
+      <Product name="product 1"/>
+      <Product name="product 2"/>
+      <Product name="product 3"/>
+    </AppFrame>
   );
 }
 
