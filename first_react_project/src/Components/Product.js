@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 
 const ProductFrame = styled.div`
@@ -17,6 +17,10 @@ function Product(props){
     function changeName(e){
         setName (e.target.value);
     }
+
+    useEffect (() => {
+      document.title = namen ;
+    });
 
     return (
         <ProductFrame>
