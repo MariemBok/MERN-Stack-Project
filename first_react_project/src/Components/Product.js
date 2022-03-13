@@ -14,12 +14,19 @@ const ProductFrame = styled.div`
 
 function Product(props){
     const [namen, setName] = useState('Mariem');
+    const [width, setWidth] = useState(window.innerWidth);
+
     function changeName(e){
         setName (e.target.value);
     }
 
     useEffect (() => {
       document.title = namen ;
+    });
+
+    useEffect (() =>{
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener('resize',handleResize);
     });
 
     return (
@@ -29,6 +36,7 @@ function Product(props){
          <input  value = {namen} 
             onChange = {changeName}> 
          </input>    
+         <h1> Window width: {width}</h1>
             
         </ProductFrame>
     );
