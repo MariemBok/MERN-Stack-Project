@@ -18,7 +18,10 @@ function Product(props){
     const lastName = useFormInput('Bokri');
     useDocumentTitle(firstName.value + ' ' + lastName.value);
     const width = useWindowWidth();
+    const [count, setCount] = useState(0);
+    var num = count;
 
+  
     return (
         <ProductFrame>
            
@@ -28,15 +31,14 @@ function Product(props){
          <input {...lastName} > 
          </input>   
          <h1> Window width: {width}</h1>
+         <button onClick={() => setCount(count + 1)}>Click me ! </button>
+         <h2> test:  {num} </h2>
             
         </ProductFrame>
     );
 }
 
 export default Product;
-
-
-
 
 function useFormInput(intialValue){
 
