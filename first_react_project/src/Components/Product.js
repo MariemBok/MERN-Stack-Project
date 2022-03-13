@@ -13,32 +13,20 @@ const ProductFrame = styled.div`
 
 
 function Product(props){
-    const [namen, setName] = useState('Mariem');
-    const [width, setWidth] = useState(window.innerWidth);
-
-    function changeName(e){
-        setName (e.target.value);
-    }
-
-    useEffect (() => {
-      document.title = namen ;
-    });
-
-    useEffect (() =>{
-      const handleResize = () => setWidth(window.innerWidth);
-      window.addEventListener('resize',handleResize);
-      return () => {
-        window.removeEventListener('resize',handleResize);
-      }
-    });
+    
+    const firstName = useFormInput('Mariem');
+    const lastName = useFormInput('Bokri');
+    useDocumentTitle(firstName.value + ' ' + lastName.value);
+    const width = useWindowWidth();
 
     return (
         <ProductFrame>
            
          <h1>{props.name}</h1>
-         <input  value = {namen} 
-            onChange = {changeName}> 
-         </input>    
+         <input {...firstName} > 
+         </input>   
+         <input {...lastName} > 
+         </input>   
          <h1> Window width: {width}</h1>
             
         </ProductFrame>
@@ -46,3 +34,41 @@ function Product(props){
 }
 
 export default Product;
+
+
+
+
+function useFormInput(intialValue){
+
+  const [value, setValue] = useState(intialValue);
+  function handleValueChange(e){
+    setValue( e.target.value );
+  }
+
+  return{
+    value,
+    onChange : handleValueChange
+  };
+
+}
+
+function useDocumentTitle(title){
+  useEffect (() => {
+    document.title = title ;
+  });
+}
+
+function useWindowWidth (){
+
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect (() =>{
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize',handleResize);
+    return () => {
+      window.removeEventListener('resize',handleResize);
+    }
+  });
+
+  return width;
+
+}
