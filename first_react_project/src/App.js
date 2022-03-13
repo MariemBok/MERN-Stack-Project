@@ -24,8 +24,6 @@ function App() {
   return (
     <AppFrame className="app">   
       <Product name="product 1"/>
-      <Product name="product 2"/>
-      <Product name="product 3"/>
     </AppFrame>
   );
 }

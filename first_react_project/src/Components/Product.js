@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 const ProductFrame = styled.div`
@@ -10,29 +10,21 @@ const ProductFrame = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const ProductImageWrapper = styled.div`
-  margin: 5px;
-  max-width: 150px;
-`;
-const ProductImage = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-`;
-const ProductInfoWrapper = styled.div`
-  margin-top: auto;
-  margin-bottom: 5px;
-  display: flex;
-  flex-direction: column;
-  & > span {
-    text-align: center`;
+
 
 function Product(props){
+    const [namen, setName] = useState('Mariem');
+    function changeName(e){
+        setName (e.target.value);
+    }
+
     return (
         <ProductFrame>
            
          <h1>{props.name}</h1>
-             
+         <input  value = {namen} 
+            onChange = {changeName}> 
+         </input>    
             
         </ProductFrame>
     );
