@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Product from "./Components/Product";
 import Products from "./products.json";
 import "./App.css";
+import Countdown from "./Components/CountDown";
 
 function App() {
   /*const Title = styled.h3`
@@ -24,7 +25,9 @@ function App() {
   return (
     <AppFrame className="app">   
       <Product name="product 1"/>
+      <Countdown/>
     </AppFrame>
+   
   );
 }
 
